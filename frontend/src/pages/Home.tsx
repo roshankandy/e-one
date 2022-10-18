@@ -5,23 +5,19 @@ import { RiAuctionLine } from "react-icons/ri";
 import { MdPointOfSale } from "react-icons/md";
 import { BsSearch ,BsFacebook, BsWhatsapp, BsTwitter, BsInstagram} from "react-icons/bs"
 
-
 function Home() {
   return (
-        <main>
-        <NavBar />
-        <div className='route-container'>
-            <section className="banner">
-              <div className="text-container">
-                <h3>Something goes here</h3>
-                <div className="buttons">
-                  <a className="btn"><RiAuctionLine /> Auctions</a>
-                  <a className="btn"><MdPointOfSale /> Sale Or Purchase</a>
-                </div>
-              </div>
-            </section>
-
-            <section className='search'>
+    <>
+       <section className="banner">
+            <div className="text-container">
+            <h3>Something goes here</h3>
+            <div className="buttons">
+                <a className="btn"><RiAuctionLine /> Auctions</a>
+                <a className="btn"><MdPointOfSale /> Sale Or Purchase</a>
+            </div>
+            </div>
+        </section> 
+        <section className='search'>
               <div className="search-box">
                 <input type="text" className='search-input' placeholder='CATEGORY' style={{width:'30%'}}/>
                 <input type="text" className='search-input' placeholder='KEYWORDS'/>
@@ -33,10 +29,8 @@ function Home() {
                 <a><BsTwitter /></a>
                 <a><BsInstagram /></a>
               </div>
-            </section>
-
-        </div>
-      </main>
+        </section>
+    </>
   )
 }
 export default Home;
