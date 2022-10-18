@@ -1,38 +1,52 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+
+import { RiAuctionLine } from "react-icons/ri";
+import { MdPointOfSale } from "react-icons/md";
+import { BsSearch ,BsFacebook, BsWhatsapp, BsTwitter, BsInstagram} from "react-icons/bs"
+
+
+import NavBar from "./components/NavBar"
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <main>
+        <NavBar />
+        <div className='route-container'>
 
-        <button onClick={() => setCount((count) => count =0)}>
-          Reset
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+            <section className="banner">
+              <div className="text-container">
+                <h3>Something goes here</h3>
+                <div className="buttons">
+                  <a className="btn"><RiAuctionLine /> Auctions</a>
+                  <a className="btn"><MdPointOfSale /> Sale Or Purchase</a>
+                </div>
+              </div>
+            </section>
+
+            <section className='search'>
+              <div className="search-box">
+                <input type="text" className='search-input' placeholder='CATEGORY' style={{width:'30%'}}/>
+                <input type="text" className='search-input' placeholder='KEYWORDS'/>
+              </div>
+              <div className="social-media">
+
+                <a><BsFacebook /></a>
+                <a><BsWhatsapp /></a>
+                <a><BsTwitter /></a>
+                <a><BsInstagram /></a>
+              </div>
+            </section>
+
+        </div>
+      </main>
     </div>
   )
 }
 
 export default App
+
