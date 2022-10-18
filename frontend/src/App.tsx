@@ -1,49 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-
-import { RiAuctionLine } from "react-icons/ri";
-import { MdPointOfSale } from "react-icons/md";
-import { BsSearch ,BsFacebook, BsWhatsapp, BsTwitter, BsInstagram} from "react-icons/bs"
-
-
-import NavBar from "./components/NavBar"
-
+import Home from "./pages/Home"
+import AboutUs from "./pages/AboutUs"
+import Services from "./pages/Services"
+import Contact from "./pages/Contact"
+import TermAndCondition from "./pages/TermAndCondition"
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+ 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <main>
-        <NavBar />
-        <div className='route-container'>
-
-            <section className="banner">
-              <div className="text-container">
-                <h3>Something goes here</h3>
-                <div className="buttons">
-                  <a className="btn"><RiAuctionLine /> Auctions</a>
-                  <a className="btn"><MdPointOfSale /> Sale Or Purchase</a>
-                </div>
-              </div>
-            </section>
-
-            <section className='search'>
-              <div className="search-box">
-                <input type="text" className='search-input' placeholder='CATEGORY' style={{width:'30%'}}/>
-                <input type="text" className='search-input' placeholder='KEYWORDS'/>
-              </div>
-              <div className="social-media">
-
-                <a><BsFacebook /></a>
-                <a><BsWhatsapp /></a>
-                <a><BsTwitter /></a>
-                <a><BsInstagram /></a>
-              </div>
-            </section>
-
-        </div>
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}> </Route>
+          <Route path="/about-us" element={<AboutUs/>}> </Route>
+          <Route path="/services" element={<Services/>}> </Route>
+          <Route path="/contact" element={<Contact/>}> </Route>
+          <Route path="/term-and-condition" element={<TermAndCondition/>}> </Route>
+        </Routes>
+    </BrowserRouter>            
     </div>
   )
 }
